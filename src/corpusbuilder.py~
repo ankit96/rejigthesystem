@@ -19,11 +19,11 @@ auth.set_access_token(atoken, asecret)
 api = tweepy.API(auth)
 
 #print ethical('Justin Bieber top discussions in India.')
-bribe = open("technology.txt", "w")
+bribe = open("ConsumerAffairs.txt", "w")
 
 for tweet in tweepy.Cursor(api.search,
-                           q="india%20technology",
-                           rpp=10,
+                           q="india%20Consumer%20Affairs",
+                           rpp=100,
                            result_type="recent",
                            include_entities=True,
                            lang="en").items():
