@@ -1,3 +1,7 @@
+'''
+1)combining two or more pickle files
+'''
+__author__ = 'ankit'
 import cPickle
 bribe=cPickle.load(open('waterwastage.p', 'rb'))
 corruption=cPickle.load(open('draught.p', 'rb'))

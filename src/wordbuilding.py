@@ -1,3 +1,7 @@
+'''
+1)converting a text file containing words into pickle format for storing list 
+'''
+__author__ = 'ankit'
 import cPickle
 
 obj=[]

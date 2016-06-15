@@ -1,3 +1,8 @@
+'''
+1)builds a txt file of words from specific topic using tweepy
+
+'''
+__author__ = 'ankit'
 from tweepy import Stream
 from tweepy import OAuthHandler
 from tweepy.streaming import StreamListener
