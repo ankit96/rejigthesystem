@@ -1,6 +1,7 @@
 '''
 1)opens all pickle files in dir and converts them to OrderedDict sorted in reverse order
 2)appending every OrderedDict to cluster list
+3)done with building ,so never run this program ever
 '''
 __author__ = 'ankit'
 

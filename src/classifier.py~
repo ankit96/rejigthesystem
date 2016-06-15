@@ -3,11 +3,13 @@
 2)uses clean and classes  
 '''
 __author__ = 'ankit'
-
+import cPickle
 from clean import clean
 from classes import stopwords
-from listtodict import cluster
-
+from learnandgood import good
+base='/home/ankit/tweeter/corpus/clusters/goverment/'
+cluster=cPickle.load(open(base+'cluster.p', 'rb'))
+match=[]
 selected=[]
 while(1):
 	inp=raw_input()
@@ -15,6 +17,7 @@ while(1):
 	x=inp.split()
 	#print x
 	x=clean(x)
+	words=x
 	print x
 	maxct=0
 	for a in cluster:
@@ -37,8 +40,10 @@ while(1):
 				selected.append(y)
 		#print ct
 		if ct> 0:
-			print a.items()[0][0]+str(ct)
-			print selected
+			lis=[]
+			lis.append(a.items()[0][0])
+			lis=lis+selected
+			match.append(lis)
 		if ct>maxct:
 			maxct=ct
 			index=a.items()[0][0]
@@ -50,5 +55,5 @@ while(1):
 		corr=raw_input()
 		learn(corr,index)
 	else :
-		good(index)
+		good(index,x,match)
 	
