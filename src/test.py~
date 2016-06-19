@@ -3,8 +3,8 @@
 '''
 __author__ = 'ankit'
 import cPickle
-from listtodict import cluster
 base='/home/ankit/tweeter/corpus/clusters/goverment/'
-
-cPickle.dump(cluster, open(base+'cluster.p', 'wb')) 
-
+cluster=cPickle.load(open(base+'cluster.p', 'rb'))
+for a in cluster:
+	if a.items()[0][0]=="defence":
+		print a

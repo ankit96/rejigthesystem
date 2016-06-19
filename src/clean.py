@@ -12,30 +12,16 @@ def clean(parliament):
 	newobj=[]
 	print parliament
 	for a in parliament:
-		#print a
+		
+		print str(i)+'  '+str(a)
 		'''if a=='...':
 			flag=1
 			'''
-		while a[-1] in redundant:
-			if len(a)>1:
-				a=a[:-1]
-				'''if flag==1:
-					print a +str(i)
-					'''
-			else:
-		
-				#print a
-				a="n"
-				#parliament.pop(i)
-		while a[0] in redundant:
-			if len(a)>1:
-				a=a[1:]
-			else:
-				a="n"
 		
 		if ',' in a:
 			b=a.split(',')
 			flag=1
+		
 		if a =='n' or a in stopwords:
 			parliament.pop(i)
 		else:
@@ -51,4 +37,6 @@ def clean(parliament):
 		i=i+1
 		#print str(a)
 		
-	return newobj
+	print newobj
+	
+clean(['#transformingindia.', 'in', 'defence', 'india', 'is', 'most', 'powerful', 'than', 'ever', 'before.', 'proud', 'of', 'pm.'])

@@ -6,7 +6,7 @@ __author__ = 'ankit'
 import cPickle
 from clean import clean
 from classes import stopwords
-from learnandgood import good
+from learnandgood import learn
 base='/home/ankit/tweeter/corpus/clusters/goverment/'
 cluster=cPickle.load(open(base+'cluster.p', 'rb'))
 match=[]
@@ -18,7 +18,7 @@ while(1):
 	#print x
 	x=clean(x)
 	words=x
-	print x
+	print "cleaned"+str(x)
 	maxct=0
 	for a in cluster:
 		selected=[]
@@ -32,12 +32,17 @@ while(1):
 			#print y\
 			
 			if y in a.keys():
-				ct=ct+1
+				
+				key=a.keys().index(y)
+				value=a.items()[key][1]
 				selected.append(y)
+				ct=ct+value
 				
 			if y[1:] in a.keys() and y[0] =='#':
-				ct=ct+2
+				key=a.keys().index(y[1:])
+				value=a.items()[key][1]
 				selected.append(y)
+				ct=ct+value+1
 		#print ct
 		if ct> 0:
 			lis=[]
@@ -53,7 +58,9 @@ while(1):
 	correct=raw_input()
 	if correct=='n':
 		corr=raw_input()
-		learn(corr,index)
+		
+		learn(1,index,x,corr,match)
 	else :
-		good(index,x,match)
+		learn(2,index,x,"null",match)
+	print "--------------------------------"
 	
