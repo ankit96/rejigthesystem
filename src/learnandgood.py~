@@ -27,23 +27,35 @@ def correct(correct,words):
 			target=order
 			cluster.remove(order)
 			break
+		'''	
+	for m in ['child','development','girl','boy','innocent','labour']:
+		target.update({m:500})
+		'''
+			
 	for b in words:
-	
+		
 		if b not in target.keys():
 			#print b
 			target.update({b:100})
+			
+			
+			
 		else:
 			#print b
+			
 			key=target.keys().index(b)
 			value=target.items()[key][1]
 			target.update({b:value+1})
+			
 	target=OrderedDict(sorted(target.items(), key=lambda t: t[1], reverse=True))
+	#print target
 	cluster.append(target)
 		
 
 	
 def learn(code,index,x,corr,match):
 	if code ==2:
+		
 		correct(index,x)
 		for a in match:
 			if a[0]!=index:
@@ -54,6 +66,6 @@ def learn(code,index,x,corr,match):
 			if a[0]!=corr:
 				incorrect(a[0],a[1:])
 	#print cluster
-	#cPickle.dump(cluster, open(base+'cluster.p', 'wb')) 
+	cPickle.dump(cluster, open(base+'cluster.p', 'wb')) 
 		
 #good("defence",['manohar', 'parrikar', 'hails', 'all-girl', 'ncc', 'team', 'everest'])

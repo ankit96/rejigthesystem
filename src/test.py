@@ -6,5 +6,5 @@ import cPickle
 base='/home/ankit/tweeter/corpus/clusters/goverment/'
 cluster=cPickle.load(open(base+'cluster.p', 'rb'))
 for a in cluster:
-	if a.items()[0][0]=="defence":
+	if a.items()[0][0]=="stopwords":
 		print a
