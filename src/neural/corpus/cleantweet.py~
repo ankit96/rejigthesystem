@@ -1,4 +1,4 @@
-
+from spellchecker import correct
 import HTMLParser
 from apos import apostrope
 import string
@@ -32,6 +32,7 @@ def clean(tweet):
 					left=word[:i-1]
 					right=word[i+1:]
 					word=left+right
+		#word=correct(word)
 		if "'" in word and word[-1]=='s':
 			sp=word.split("'")
 			word=sp[0]

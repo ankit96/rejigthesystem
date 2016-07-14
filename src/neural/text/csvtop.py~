@@ -10,7 +10,7 @@ def f1(seq):
    return set.keys()
 
 output = []
-f = open( '/home/ankit/tweeter/src/neural/text/defence.csv', 'rU' ) #open the file in read universal mode
+f = open( 'railways.csv', 'rU' ) #open the file in read universal mode
 for line in f:
     #print str(line)
     cells = line.split( ";" )
@@ -19,12 +19,10 @@ f.close()
 obj=[]
 output=output[1:]
 
-index=0
-array=[]
-data=cPickle.load(open('data.p', 'rb'))
+
 for tweet in output:
 	tweet=clean(tweet)
-	#print str(tweet)
+	print str(tweet)
 	'''
 	inp=raw_input()
 	if inp=='y':
@@ -33,21 +31,10 @@ for tweet in output:
 		incortext_file.write(tweet)
 	obj=obj+tweet.split()
 	'''
-	data.update({tweet:'railways'})
-	
+	#data.update({tweet:'railways'})
 	
 	
 
-cPickle.dump(data, open('data.p', 'wb')) 
-
-i=0
-data1=cPickle.load(open('data.p', 'rb'))
-for a in data1:
-	print a
-	print data[a]
-	i=i+1
-	if i>5:
-		break
 """
 	if index>0:
 		defence=cPickle.load(open('e.p', 'rb'))
