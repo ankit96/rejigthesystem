@@ -10,7 +10,7 @@ def f1(seq):
    return set.keys()
 
 output = []
-f = open( 'railways.csv', 'rU' ) #open the file in read universal mode
+f = open( 'sportstest.csv', 'rU' ) #open the file in read universal mode
 for line in f:
     #print str(line)
     cells = line.split( ";" )
@@ -21,7 +21,8 @@ output=output[1:]
 
 index=0
 array=[]
-data=cPickle.load(open('data.p', 'rb'))
+data=cPickle.load(open('datatest.p', 'rb'))
+#data={}
 for tweet in output:
 	tweet=clean(tweet)
 	#print str(tweet)
@@ -33,15 +34,15 @@ for tweet in output:
 		incortext_file.write(tweet)
 	obj=obj+tweet.split()
 	'''
-	data.update({tweet:'railways'})
+	data.update({tweet:'sports'})
 	
 	
 	
 
-cPickle.dump(data, open('data.p', 'wb')) 
+cPickle.dump(data, open('datatest.p', 'wb')) 
 
 i=0
-data1=cPickle.load(open('data.p', 'rb'))
+data1=cPickle.load(open('datatest.p', 'rb'))
 for a in data1:
 	print a
 	print data[a]
