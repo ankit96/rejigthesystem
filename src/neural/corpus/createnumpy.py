@@ -2,7 +2,7 @@ import numpy as np
 from ast import literal_eval
 import cPickle
 import operator
-data=cPickle.load(open('orderedtestdata.p','rb'))
+data=cPickle.load(open('ordereddattest.p','rb'))
 
 traindata=[]
 for a in data:
@@ -16,7 +16,7 @@ for a in data:
 	 traindata.append(z)
 	 
 	 
-cPickle.dump(traindata, open('numpytestdata.p', 'wb')) 	 
+cPickle.dump(traindata, open('numpydattest.p', 'wb')) 	 
 i=5
 while i:
 	print traindata[i]

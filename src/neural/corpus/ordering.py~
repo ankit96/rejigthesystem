@@ -1,7 +1,7 @@
 import cPickle
 import operator
 i=0
-data=cPickle.load(open('datatest.p', 'rb'))
+data=cPickle.load(open('dattest.p', 'rb'))
 #data contains a dictionary having tweets as keys and category as value
 '''
 text = open('data.txt').read().replace('ht/', '')
@@ -43,7 +43,7 @@ result={"railways":1,"sports":2,"defence":3}
 for a in data:
 	
 	newdict.update({order(a):result[data[a]]})
-cPickle.dump(newdict, open('orderedtestdata.p', 'wb')) 	
+cPickle.dump(newdict, open('ordereddattest.p', 'wb')) 	
 
 for a in newdict:
 	x = list(literal_eval(a))

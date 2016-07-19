@@ -10,7 +10,7 @@ def f1(seq):
    return set.keys()
 
 output = []
-f = open( 'sportstest.csv', 'rU' ) #open the file in read universal mode
+f = open( 'def.csv', 'rU' ) #open the file in read universal mode
 for line in f:
     #print str(line)
     cells = line.split( ";" )
@@ -34,13 +34,12 @@ for tweet in output:
 		incortext_file.write(tweet)
 	obj=obj+tweet.split()
 	'''
-	data.update({tweet:'sports'})
-	
+	data.update({tweet:'defence'})
 	
 	
 
-cPickle.dump(data, open('datatest.p', 'wb')) 
-
+cPickle.dump(data, open('dattest.p', 'wb'))
+'''
 i=0
 data1=cPickle.load(open('datatest.p', 'rb'))
 for a in data1:
@@ -49,6 +48,7 @@ for a in data1:
 	i=i+1
 	if i>5:
 		break
+'''
 """
 	if index>0:
 		defence=cPickle.load(open('e.p', 'rb'))

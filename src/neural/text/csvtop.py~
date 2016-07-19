@@ -10,7 +10,7 @@ def f1(seq):
    return set.keys()
 
 output = []
-f = open( 'sports9-3-14.csv', 'rU' ) #open the file in read universal mode
+f = open( 'def.csv', 'rU' ) #open the file in read universal mode
 for line in f:
     #print str(line)
     cells = line.split( ";" )
