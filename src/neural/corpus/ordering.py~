@@ -43,8 +43,8 @@ result={"railways":1,"sports":2,"defence":3}
 for a in data:
 	
 	newdict.update({order(a):result[data[a]]})
-cPickle.dump(newdict, open('ordereddattest.p', 'wb')) 	
-
+cPickle.dump(newdict, open('ordereddat.p', 'wb')) 	
+'''
 for a in newdict:
 	x = list(literal_eval(a))
 	for b in x:
@@ -52,3 +52,4 @@ for a in newdict:
 	print("---------------")
 	print newdict[a]
 	break
+'''

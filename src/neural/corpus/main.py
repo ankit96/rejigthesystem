@@ -43,7 +43,7 @@ j=0
 ct=0
 
 while j<i:
-	x=clf.predict(testinputdata[j])
+	x=clf.predict(list(testinputdata[j]))
 	y=testoutputdata[j]
 	if x==y:
 		ct=ct+1
