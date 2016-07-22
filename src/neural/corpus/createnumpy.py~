@@ -2,9 +2,10 @@ import numpy as np
 from ast import literal_eval
 import cPickle
 import operator
-data=cPickle.load(open('ordereddattest.p','rb'))
+data=cPickle.load(open('orderedfulldata.p','rb'))
 
 traindata=[]
+ct=0
 for a in data:
 	 d=list(literal_eval(a))
 	 le=len(d)
@@ -14,9 +15,12 @@ for a in data:
 	 y = data[a]
 	 z = (x , y)
 	 traindata.append(z)
+	 ct=ct+1
+	 if ct>999 and ct%1000==0:
+	 	print str(ct)
 	 
 	 
-cPickle.dump(traindata, open('numpydattest.p', 'wb')) 	 
+cPickle.dump(traindata, open('numpyfulltest.p', 'wb')) 	 
 i=5
 while i:
 	print traindata[i]

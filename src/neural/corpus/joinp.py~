@@ -1,0 +1,19 @@
+import cPickle
+import operator
+'''
+i=0
+sports=cPickle.load(open('/home/ankit/tweeter/src/neural/corpus/sports/sports.p', 'rb'))
+defence=cPickle.load(open('/home/ankit/tweeter/src/neural/corpus/defence/defence.p', 'rb'))
+
+railways=cPickle.load(open('/home/ankit/tweeter/src/neural/corpus/railways/railways.p', 'rb'))
+#data = sports + defence + railways
+data = sports
+data.update(defence)
+data.update(railways)
+
+
+cPickle.dump(data, open('fulldata.p', 'wb'))
+'''
+data = cPickle.load(open('/home/ankit/tweeter/src/neural/corpus/fulldata.p', 'rb'))
+for a in data.keys():
+	print a
