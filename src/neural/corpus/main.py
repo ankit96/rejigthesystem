@@ -1,7 +1,7 @@
 import cPickle
 import numpy as np
 from sklearn.svm import SVR
-import matplotlib.pyplot as plt
+
 
 data = cPickle.load(open('numpyfulldata.p','rb'))
 training_data=data[:40000]
@@ -31,7 +31,8 @@ while j<i:
 		ct=ct+1
 	#print str(clf.predict(testinputdata[j]))+ "  --  "+str(testoutputdata[j]) +"  "+str(j)
 	j=j+1
-print float(ct)/len(testinputdata)*100
+ct=ct*1.0
+print(ct/len(testinputdata)*100)
 '''
 svr_rbf = SVR(kernel='rbf', C=1e3, gamma=0.1)
 svr_lin = SVR(kernel='linear', C=1e3)
