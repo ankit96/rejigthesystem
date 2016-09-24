@@ -10,7 +10,7 @@ def f1(seq):
    return set.keys()
 
 output = []
-f = open( '/home/ankit/tweeter/src/neural/corpus/sports/output_got12.csv', 'rU' ) #open the file in read universal mode
+f = open( '/home/ankit/tweeter/src/neural/corpus/roads/roads.csv', 'rU' ) #open the file in read universal mode
 for line in f:
     #print str(line)
     cells = line.split( ";" )
@@ -21,8 +21,8 @@ output=output[1:]
 
 index=0
 array=[]
-data=cPickle.load(open('/home/ankit/tweeter/src/neural/corpus/sports/sports.p', 'rb'))
-#data={}
+#data=cPickle.load(open('/home/ankit/tweeter/src/neural/corpus/finance/finance.p', 'rb'))
+data={}
 for tweet in output:
 	tweet=clean(tweet)
 	#print str(tweet)
@@ -34,11 +34,11 @@ for tweet in output:
 		incortext_file.write(tweet)
 	obj=obj+tweet.split()
 	'''
-	data.update({tweet:'sports'})
+	data.update({tweet:'roads'})
 	
 	
 
-cPickle.dump(data, open('/home/ankit/tweeter/src/neural/corpus/sports/sports.p', 'wb'))
+cPickle.dump(data, open('/home/ankit/tweeter/src/neural/corpus/roads/roads.p', 'wb'))
 '''
 i=0
 data1=cPickle.load(open('datatest.p', 'rb'))
