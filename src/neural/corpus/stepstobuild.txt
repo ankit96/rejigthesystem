@@ -1,0 +1,7 @@
+1)get data from getpost folder (try to maintain single csv file)
+2)run csvtop python file to build p files
+3)combine all .p file into a basedata text file and basedatap ptype fileseperately
+4)run ordering.py to convert words to frequencies
+5)total tweets 129598
+
+

@@ -1,0 +1,7 @@
+import numpy as np
+import cPickle
+data=cPickle.load(open('testdata.p','rb'))
+x= len(data)
+arr = np.zeros(shape=(5))
+
+	
