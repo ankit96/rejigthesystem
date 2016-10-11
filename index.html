@@ -175,7 +175,8 @@ if (typeof parameters.oauth_verifier !== "undefined") {
             if (reply) {
                 cb.setToken(reply.oauth_token, reply.oauth_token_secret);
             }
-          
+             localStorage.setItem("oauth_token", reply.oauth_token);
+            localStorage.setItem("oauth_token_secret", reply.oauth_token_secret);
             // if you need to persist the login after page reload,
             // consider storing the token in a cookie or HTML5 local storage
         }
@@ -185,7 +186,7 @@ if (typeof parameters.oauth_verifier !== "undefined") {
           }
         });
     }
-    localStorage.clear();
+    //localStorage.clear();
   })
 
 });
