@@ -59,11 +59,52 @@
 
     
     var cb = new Codebird;
-     cb.setConsumerKey("PlO8d5fGDyKPkA3GMOdImljTz", "u5944xZy9GPsg5A3OIySMjeSZ6qIFRkMbG9d9NcBpEjeovB07i");
+    
+    var current_url = location.toString();
+var query       = current_url.match(/\?(.+)$/).split("&amp;");
+var parameters  = {};
+var parameter;
+
+ var oauth_token = localStorage.getItem("oauth_token");
+  var oauth_token_secret = localStorage.getItem("oauth_token_secret");
+cb.setConsumerKey("PlO8d5fGDyKPkA3GMOdImljTz", "u5944xZy9GPsg5A3OIySMjeSZ6qIFRkMbG9d9NcBpEjeovB07i");
+
+for (var i = 0; i < query.length; i++) {
+    parameter = query[i].split("=");
+    if (parameter.length === 1) {
+        parameter[1] = "";
+    }
+    parameters[decodeURIComponent(parameter[0])] = decodeURIComponent(parameter[1]);
+}
+
+// check if oauth_verifier is set
+if (typeof parameters.oauth_verifier !== "undefined") {
+    // assign stored request token parameters to codebird here
+    // ...
+    cb.setToken(oauth_token, oauth_token_secret);
+
+    cb.__call(
+        "oauth_accessToken",
+        {
+            oauth_verifier: parameters.oauth_verifier
+        },
+        function (reply, rate, err) {
+            if (err) {
+                console.log("error response or timeout exceeded" + err.error);
+            }
+            if (reply) {
+                cb.setToken(reply.oauth_token, reply.oauth_token_secret);
+          alert(oauth_token+"-----"+oauth_token_secret)
+               document.getElementById("text").innerHTML =oauth_token + " "oauth_token_secret ;
+            }
+            // if you need to persist the login after page reload,
+            // consider storing the token in a cookie or HTML5 local storage
+        }
+    );
+}
   
-    var oauth_token = localStorage.getItem("oauth_token");
-    var oauth_token_secret = localStorage.getItem("oauth_token_secret");
-    alert(oauth_token+"-----"+oauth_token_secret)
+   
+    
      document.getElementById("text").innerHTML =oauth_token + " "oauth_token_secret ;
      var tweetit = document.getElementById('tweet').value;
     cb.setToken(oauth_token, oauth_token_secret);
