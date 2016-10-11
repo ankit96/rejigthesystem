@@ -70,7 +70,7 @@
           </button>
           <a href="#" id="authorize" target="_blank">Authorize Link</a>
 
-          <p id="text"></p
+            <p id="text"></p>
             <form action="action_page.php">
           Tweet:<br>
             <input type="text" name="tweet" value=""><br>
@@ -139,7 +139,7 @@
                 // http://127.0.0.1:49479/?oauth_token=[some_token]&oauth_verifier=[some_verifier]
                 // then follow this section for coding that page:
                 // https://github.com/jublonet/codebird-js#authenticating-using-a-callback-url-without-pin
-
+/*
 var current_url = location.toString();
 var query       = current_url.match(/\?(.+)$/).split("&amp;");
 var parameters  = {};
@@ -181,6 +181,7 @@ if (typeof parameters.oauth_verifier !== "undefined") {
         }
     );
 }
+*/
               });
           }
         });
