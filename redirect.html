@@ -54,9 +54,11 @@
    
     $(function () {
   $(document).ready ( function(){
+    
+   
     var oauth_token = localStorage.getItem("oauth_token");
   var oauth_token_secret = localStorage.getItem("oauth_token_secret");
-   document.getElementById("text").innerHTML =oauth_token + " "oauth_token_secret ;
+   document.getElementById("text").innerHTML =oauth_token + " "+oauth_token_secret ;
 });
   $('#twitter').click(function (e) {
     e.preventDefault();
