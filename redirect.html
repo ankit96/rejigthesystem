@@ -94,8 +94,8 @@ if (typeof parameters.oauth_verifier !== "undefined") {
             }
             if (reply) {
                 cb.setToken(reply.oauth_token, reply.oauth_token_secret);
-          alert(oauth_token+"-----"+oauth_token_secret)
-               document.getElementById("text").innerHTML =oauth_token + " "oauth_token_secret ;
+          alert(reply.oauth_token)
+               document.getElementById("text").innerHTML =reply.oauth_token + " "+reply.oauth_token_secret ;
             }
             // if you need to persist the login after page reload,
             // consider storing the token in a cookie or HTML5 local storage
@@ -105,7 +105,7 @@ if (typeof parameters.oauth_verifier !== "undefined") {
   
    
     
-     document.getElementById("text").innerHTML =oauth_token + " "oauth_token_secret ;
+     //document.getElementById("text").innerHTML =oauth_token + " "oauth_token_secret ;
      var tweetit = document.getElementById('tweet').value;
     cb.setToken(oauth_token, oauth_token_secret);
   cb.__call(
