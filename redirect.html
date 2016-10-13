@@ -33,8 +33,8 @@
             </h3>
          
 
-            <p id="text"></p>
-           
+            <p id="hi"></p>
+            <p id="hello"></p>
           Tweet:<br>
             <input type="text" id ="tweet" name="tweet" value=""><br>
              <button id="twitter">
@@ -69,6 +69,7 @@ var parameter;
 
  var oauth_token = localStorage.getItem("oauth_token");
   var oauth_token_secret = localStorage.getItem("oauth_token_secret");
+  document.getElementById("hi").innerHTML =oauth_token + " - -- -  "+ oauth_token_secret ;
 cb.setConsumerKey("PlO8d5fGDyKPkA3GMOdImljTz", "u5944xZy9GPsg5A3OIySMjeSZ6qIFRkMbG9d9NcBpEjeovB07i");
 
 for (var i = 0; i < query.length; i++) {
@@ -78,7 +79,7 @@ for (var i = 0; i < query.length; i++) {
     }
     parameters[decodeURIComponent(parameter[0])] = decodeURIComponent(parameter[1]);
 }
-
+document.getElementById("hello").innerHTML =parameters.oauth_token + " - -- -  "+ parameters.oauth_token_secret ;
 // check if oauth_verifier is set
 if (typeof parameters.oauth_verifier !== "undefined") {
     // assign stored request token parameters to codebird here
@@ -97,7 +98,7 @@ if (typeof parameters.oauth_verifier !== "undefined") {
             if (reply) {
                 cb.setToken(reply.oauth_token, reply.oauth_token_secret);
           alert(reply.oauth_token)
-               document.getElementById("text").innerHTML =reply.oauth_token + " "+reply.oauth_token_secret ;
+              // document.getElementById("text").innerHTML =reply.oauth_token + " "+reply.oauth_token_secret ;
             }
             // if you need to persist the login after page reload,
             // consider storing the token in a cookie or HTML5 local storage
