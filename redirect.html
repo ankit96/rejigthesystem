@@ -66,7 +66,8 @@
 
  var oauth_token = localStorage.getItem("oauth_token");
   var oauth_token_secret = localStorage.getItem("oauth_token_secret");
-  document.getElementById("hi").innerHTML =oauth_token + " - -- -  "+ oauth_token_secret ;
+  var current_url = localStorage.getItem("current_url");
+  document.getElementById("hi").innerHTML =oauth_token + " - -- -  "+ oauth_token_secret+"-- -- --"+current_url ;
 cb.setConsumerKey("PlO8d5fGDyKPkA3GMOdImljTz", "u5944xZy9GPsg5A3OIySMjeSZ6qIFRkMbG9d9NcBpEjeovB07i");
 
 var parameters1=localStorage.getItem("oauth_token1");
