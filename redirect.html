@@ -63,21 +63,12 @@
     var cb = new Codebird;
     
    var current_url = location.toString();
-   var query       = current_url.match(/\?(.+)$/).split("&amp;");
-var parameters  = {};
-var parameter;
+    parameters1 = url.match(/\#(?:oauth_token)\=([\S\s]*?)\&/)[1];
+    parameters2= url.match(/\#(?:oauth_verifier)\=([\S\s]*?)\&/)[1];
 
- var oauth_token = localStorage.getItem("oauth_token");
-  var oauth_token_secret = localStorage.getItem("oauth_token_secret");
+ 
 cb.setConsumerKey("PlO8d5fGDyKPkA3GMOdImljTz", "u5944xZy9GPsg5A3OIySMjeSZ6qIFRkMbG9d9NcBpEjeovB07i");
 
-for (var i = 0; i < query.length; i++) {
-    parameter = query[i].split("=");
-    if (parameter.length === 1) {
-        parameter[1] = "";
-    }
-    parameters[decodeURIComponent(parameter[0])] = decodeURIComponent(parameter[1]);
-}
 
  var oauth_token = localStorage.getItem("oauth_token");
   var oauth_token_secret = localStorage.getItem("oauth_token_secret");
@@ -85,11 +76,11 @@ for (var i = 0; i < query.length; i++) {
   document.getElementById("hi").innerHTML =oauth_token + " - -- -  "+ oauth_token_secret+"-- -- --"+current_url ;
 cb.setConsumerKey("PlO8d5fGDyKPkA3GMOdImljTz", "u5944xZy9GPsg5A3OIySMjeSZ6qIFRkMbG9d9NcBpEjeovB07i");
 
-var parameters1=parameters.oauth_token;//localStorage.getItem("oauth_token1");
-var parameters2 = parameters.oauth_verifier;//localStorage.getItem("oauth_token_secret1");
+//var parameters1=parameters.oauth_token;//localStorage.getItem("oauth_token1");
+//var parameters2 = parameters.oauth_verifier;//localStorage.getItem("oauth_token_secret1");
 document.getElementById("hello").innerHTML =parameters1 + " - -- -  "+ parameters2 ;
 // check if oauth_verifier is set
-if (typeof parameters1 !== "undefined") {
+if (typeof parameters2 !== "undefined") {
     // assign stored request token parameters to codebird here
     // ...
     cb.setToken(oauth_token, oauth_token_secret);
