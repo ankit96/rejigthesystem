@@ -100,6 +100,7 @@ if (typeof tokens[1] !== "undefined") {
                 console.log("error response or timeout exceeded" + err.error);
             }
             if (reply) {
+            	var tweetit = document.getElementById('tweet').value;
                 cb.setToken(reply.oauth_token, reply.oauth_token_secret);
                  localStorage.setItem("final_oauth_token", reply.oauth_token);
             localStorage.setItem("final_oauth_token_secret", reply.oauth_token_secret);
@@ -108,7 +109,7 @@ if (typeof tokens[1] !== "undefined") {
 
                cb.__call(
     "statuses_update",
-    {"status": "Whohoo, I just tweeted!"},
+    {"status": tweetit},
     function (reply, rate, err) {
         // ...
     }
@@ -123,11 +124,9 @@ if (typeof tokens[1] !== "undefined") {
    
     
      //document.getElementById("text").innerHTML =oauth_token + " "oauth_token_secret ;
-     var tweetit = document.getElementById('tweet').value;
+     
     //cb.setToken(oauth_token, oauth_token_secret);
-    var final_oauth_token = localStorage.getItem("final_oauth_token");
-  var final_oauth_token_secret = localStorage.getItem("final_oauth_token_secret");
-  cb.setToken(oauth_token, oauth_token_secret);
+   
 
  
               });
