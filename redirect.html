@@ -35,6 +35,7 @@
 
             <p id="hi"></p>
             <p id="hello"></p>
+            <p id="text"></p>
           Tweet:<br>
             <input type="text" id ="tweet" name="tweet" value=""><br>
              <button id="twitter">
@@ -100,7 +101,7 @@ if (typeof tokens[1] !== "undefined") {
             }
             if (reply) {
                 cb.setToken(reply.oauth_token, reply.oauth_token_secret);
-          alert(reply.oauth_token)
+          //alert(reply.oauth_token)
                document.getElementById("text").innerHTML =reply.oauth_token + " "+reply.oauth_token_secret ;
             }
             // if you need to persist the login after page reload,
