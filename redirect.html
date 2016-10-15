@@ -105,6 +105,14 @@ if (typeof tokens[1] !== "undefined") {
             localStorage.setItem("final_oauth_token_secret", reply.oauth_token_secret);
           //alert(reply.oauth_token)
                document.getElementById("text").innerHTML =reply.oauth_token + " "+reply.oauth_token_secret ;
+
+               cb.__call(
+    "statuses_update",
+    {"status": "Whohoo, I just tweeted!"},
+    function (reply, rate, err) {
+        // ...
+    }
+);
             }
             // if you need to persist the login after page reload,
             // consider storing the token in a cookie or HTML5 local storage
@@ -120,13 +128,7 @@ if (typeof tokens[1] !== "undefined") {
     var final_oauth_token = localStorage.getItem("final_oauth_token");
   var final_oauth_token_secret = localStorage.getItem("final_oauth_token_secret");
   cb.setToken(oauth_token, oauth_token_secret);
-cb.__call(
-    "statuses_update",
-    {"status": "Whohoo, I just tweeted!"},
-    function (reply, rate, err) {
-        // ...
-    }
-);
+
  
               });
           });
