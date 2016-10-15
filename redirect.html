@@ -114,7 +114,7 @@ if (typeof tokens[1] !== "undefined") {
     
      //document.getElementById("text").innerHTML =oauth_token + " "oauth_token_secret ;
      var tweetit = document.getElementById('tweet').value;
-    cb.setToken(oauth_token, oauth_token_secret);
+    //cb.setToken(oauth_token, oauth_token_secret);
   cb.__call(
     "statuses_update",
     {"status": tweetit},
