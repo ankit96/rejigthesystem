@@ -101,6 +101,8 @@ if (typeof tokens[1] !== "undefined") {
             }
             if (reply) {
                 cb.setToken(reply.oauth_token, reply.oauth_token_secret);
+                 localStorage.setItem("final_oauth_token", reply.oauth_token);
+            localStorage.setItem("final_oauth_token_secret", reply.oauth_token_secret);
           //alert(reply.oauth_token)
                document.getElementById("text").innerHTML =reply.oauth_token + " "+reply.oauth_token_secret ;
             }
@@ -115,6 +117,9 @@ if (typeof tokens[1] !== "undefined") {
      //document.getElementById("text").innerHTML =oauth_token + " "oauth_token_secret ;
      var tweetit = document.getElementById('tweet').value;
     //cb.setToken(oauth_token, oauth_token_secret);
+    var final_oauth_token = localStorage.getItem("final_oauth_token");
+  var final_oauth_token_secret = localStorage.getItem("final_oauth_token_secret");
+  cb.setToken(oauth_token, oauth_token_secret);
 cb.__call(
     "statuses_update",
     {"status": "Whohoo, I just tweeted!"},
