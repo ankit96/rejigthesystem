@@ -56,7 +56,12 @@
     <script>
    
     $(function () {
-      var cb = new Codebird;
+  
+  $('#twitter').click(function (e) {
+    e.preventDefault();
+
+    
+    var cb = new Codebird;
     
    var current_url = location.toString();
    var p1=location.oauth_token;
@@ -76,7 +81,9 @@ cb.setConsumerKey("PlO8d5fGDyKPkA3GMOdImljTz", "u5944xZy9GPsg5A3OIySMjeSZ6qIFRkM
   document.getElementById("hi").innerHTML =oauth_token + " - -- -  "+ oauth_token_secret+"-- -- --"+current_url ;
 cb.setConsumerKey("PlO8d5fGDyKPkA3GMOdImljTz", "u5944xZy9GPsg5A3OIySMjeSZ6qIFRkMbG9d9NcBpEjeovB07i");
 
-  document.getElementById("hello").innerHTML =tokens[0] + " - -- -  "+ tokens[1] ;
+//var parameters1=parameters.oauth_token;//localStorage.getItem("oauth_token1");
+//var parameters2 = parameters.oauth_verifier;//localStorage.getItem("oauth_token_secret1");
+document.getElementById("hello").innerHTML =tokens[0] + " - -- -  "+ tokens[1] ;
 // check if oauth_verifier is set
 if (typeof tokens[1] !== "undefined") {
     // assign stored request token parameters to codebird here
@@ -99,18 +106,6 @@ if (typeof tokens[1] !== "undefined") {
             localStorage.setItem("final_oauth_token_secret", reply.oauth_token_secret);
           //alert(reply.oauth_token)
                document.getElementById("text").innerHTML =reply.oauth_token + " "+reply.oauth_token_secret ;
-   }
- }
-    );
-}
-
-  $('#twitter').click(function (e) {
-    e.preventDefault();
-
-    
-    
-//var parameters1=parameters.oauth_token;//localStorage.getItem("oauth_token1");
-//var parameters2 = parameters.oauth_verifier;//localStorage.getItem("oauth_token_secret1");
 
                cb.__call(
     "statuses_update",
@@ -119,8 +114,31 @@ if (typeof tokens[1] !== "undefined") {
         // ...
     }
 );
-             }
-            
+               cb.__call(
+    "statuses_homeTimeline",
+    {},
+    function (reply, rate, err) {
+        console.log(reply);
+        console.log(err);
+        alert(reply)
+    }
+);
+            }
+            // if you need to persist the login after page reload,
+            // consider storing the token in a cookie or HTML5 local storage
+        }
+    );
+}
+  
+   
+    
+     //document.getElementById("text").innerHTML =oauth_token + " "oauth_token_secret ;
+     
+    //cb.setToken(oauth_token, oauth_token_secret);
+   
+
+ 
+              });
           });
        
 </script>
