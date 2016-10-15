@@ -63,8 +63,8 @@
     var cb = new Codebird;
     
    var current_url = location.toString();
-    parameters1 = url.match(/\#(?:oauth_token)\=([\S\s]*?)\&/)[1];
-    parameters2= url.match(/\#(?:oauth_verifier)\=([\S\s]*?)\&/)[1];
+    //parameters1 = url.match(/\#(?:oauth_token)\=([\S\s]*?)\&/)[1];
+    //parameters2= url.match(/\#(?:oauth_verifier)\=([\S\s]*?)\&/)[1];
 
  
 cb.setConsumerKey("PlO8d5fGDyKPkA3GMOdImljTz", "u5944xZy9GPsg5A3OIySMjeSZ6qIFRkMbG9d9NcBpEjeovB07i");
@@ -78,7 +78,7 @@ cb.setConsumerKey("PlO8d5fGDyKPkA3GMOdImljTz", "u5944xZy9GPsg5A3OIySMjeSZ6qIFRkM
 
 //var parameters1=parameters.oauth_token;//localStorage.getItem("oauth_token1");
 //var parameters2 = parameters.oauth_verifier;//localStorage.getItem("oauth_token_secret1");
-document.getElementById("hello").innerHTML =parameters1 + " - -- -  "+ parameters2 ;
+//document.getElementById("hello").innerHTML =parameters1 + " - -- -  "+ parameters2 ;
 // check if oauth_verifier is set
 if (typeof parameters2 !== "undefined") {
     // assign stored request token parameters to codebird here
