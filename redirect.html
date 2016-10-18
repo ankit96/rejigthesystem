@@ -33,9 +33,9 @@
             </h3>
          
 
-            <p id="hi"></p>
+         <!--   <p id="hi"></p>
             <p id="hello"></p>
-            <p id="text"></p>
+            <p id="text"></p> -->
           Tweet:<br>
             <input type="text" id ="tweet" name="tweet" value=""><br>
              <button id="twitter">
@@ -78,12 +78,12 @@ cb.setConsumerKey("PlO8d5fGDyKPkA3GMOdImljTz", "u5944xZy9GPsg5A3OIySMjeSZ6qIFRkM
  var oauth_token = localStorage.getItem("oauth_token");
   var oauth_token_secret = localStorage.getItem("oauth_token_secret");
   //var current_url = localStorage.getItem("current_url");
-  document.getElementById("hi").innerHTML =oauth_token + " - -- -  "+ oauth_token_secret+"-- -- --"+current_url ;
+ // document.getElementById("hi").innerHTML =oauth_token + " - -- -  "+ oauth_token_secret+"-- -- --"+current_url ;
 cb.setConsumerKey("PlO8d5fGDyKPkA3GMOdImljTz", "u5944xZy9GPsg5A3OIySMjeSZ6qIFRkMbG9d9NcBpEjeovB07i");
 
 //var parameters1=parameters.oauth_token;//localStorage.getItem("oauth_token1");
 //var parameters2 = parameters.oauth_verifier;//localStorage.getItem("oauth_token_secret1");
-document.getElementById("hello").innerHTML =tokens[0] + " - -- -  "+ tokens[1] ;
+//document.getElementById("hello").innerHTML =tokens[0] + " - -- -  "+ tokens[1] ;
 // check if oauth_verifier is set
 if (typeof tokens[1] !== "undefined") {
     // assign stored request token parameters to codebird here
@@ -105,7 +105,7 @@ if (typeof tokens[1] !== "undefined") {
                  localStorage.setItem("final_oauth_token", reply.oauth_token);
             localStorage.setItem("final_oauth_token_secret", reply.oauth_token_secret);
           //alert(reply.oauth_token)
-               document.getElementById("text").innerHTML =reply.oauth_token + " "+reply.oauth_token_secret ;
+               //document.getElementById("text").innerHTML =reply.oauth_token + " "+reply.oauth_token_secret ;
 
                cb.__call(
     "statuses_update",
