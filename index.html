@@ -65,18 +65,11 @@
           <button id="twitter">
           Twitter
           </button>
-          <button id="redirect">
-          redirect
-          </button>
-          <a href="#" id="authorize" target="_blank">Authorize Link</a>
+          
+        <!--  <a href="#" id="authorize" target="_blank">Authorize Link</a> 
 
-            <p id="text"></p>
-            <form action="action_page.php">
-          Tweet:<br>
-            <input type="text" name="tweet" value=""><br>
-
-            <input type="submit" value="Submit">
-            </form>
+            <p id="text"></p>-->
+            
           </div>
         </section>
         <footer>
@@ -136,8 +129,10 @@
                 console.log("auth_url", auth_url);
                 // JSFiddle doesn't open windows:
                 // window.open(auth_url);
-                $("#authorize").attr("href", auth_url);
-                document.getElementById("text").innerHTML =auth_url ;
+                window.location.href = auth_url;
+
+               // $("#authorize").attr("href", auth_url);
+                //document.getElementById("text").innerHTML =auth_url ;
                 // after user authorizes, user will be redirected to
                 // http://127.0.0.1:49479/?oauth_token=[some_token]&oauth_verifier=[some_verifier]
                 // then follow this section for coding that page:
