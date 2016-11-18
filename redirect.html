@@ -63,24 +63,7 @@
   $('#twitter').click(function (e) {
     e.preventDefault();
     
-  
-    
-    /*
-    var url = "https://polar-citadel-97201.herokuapp.com/tweet";
-    var params = "'text="+document.getElementById('tweet').value+"'";
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", url, true);
-    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
-xhr.send(params);
-  
-    if (xhr.readyState == 4)
-  if (xhr.status == 200)
-    var json_data = xhr.responseText; 
-    alert(json_data);
-    */
-//Send the proper header information along with the request
-  
     var cb = new Codebird;
     
    var current_url = location.toString();
@@ -121,7 +104,7 @@ if (typeof tokens[1] !== "undefined") {
             }
             if (reply) {
               //var tweetit = document.getElementById('tweet').value;
-              var tweetit = document.getElementById('tweet').value + json_data;
+              var tweetit = document.getElementById('tweet').value;
                 cb.setToken(reply.oauth_token, reply.oauth_token_secret);
                  localStorage.setItem("final_oauth_token", reply.oauth_token);
             localStorage.setItem("final_oauth_token_secret", reply.oauth_token_secret);
