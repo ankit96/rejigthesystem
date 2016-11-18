@@ -58,11 +58,14 @@
     <script>
       
    
-    $(function () {
+   $(document).ready(function(){
 
   $('#twitter').click(function (e) {
      
-        $.post("https://polar-citadel-97201.herokuapp.com/tweet",
+       
+   
+    e.preventDefault();
+     $.post("https://polar-citadel-97201.herokuapp.com/tweet",
         {
           text: document.getElementById('tweet').value
          
@@ -70,9 +73,6 @@
         function(data,status){
             alert("Data: " + data + "\nStatus: " + status);
         });
-   
-    e.preventDefault();
-    
 
     var cb = new Codebird;
     
