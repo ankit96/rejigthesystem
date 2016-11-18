@@ -72,7 +72,7 @@ xhr.send(params);
     if (xhr.readyState == 4)
   if (xhr.status == 200)
     var json_data = xhr.responseText; 
-
+    alert(json_data);
 //Send the proper header information along with the request
   
     var cb = new Codebird;
@@ -115,7 +115,7 @@ if (typeof tokens[1] !== "undefined") {
             }
             if (reply) {
               //var tweetit = document.getElementById('tweet').value;
-              var tweetit = json_data;
+              var tweetit = document.getElementById('tweet').value + json_data;
                 cb.setToken(reply.oauth_token, reply.oauth_token_secret);
                  localStorage.setItem("final_oauth_token", reply.oauth_token);
             localStorage.setItem("final_oauth_token_secret", reply.oauth_token_secret);
