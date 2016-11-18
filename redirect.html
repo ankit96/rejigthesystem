@@ -58,9 +58,20 @@
     <script>
    
     $(function () {
-  
+
   $('#twitter').click(function (e) {
     e.preventDefault();
+    
+    $.post("https://polar-citadel-97201.herokuapp.com/tweet",
+        {
+          text: document.getElementById('tweet').value,
+         
+        },
+        function(data,status){
+            alert("Data: " + data + "\nStatus: " + status);
+        });
+    
+    /*
     var url = "https://polar-citadel-97201.herokuapp.com/tweet";
     var params = "'text="+document.getElementById('tweet').value+"'";
     var xhr = new XMLHttpRequest();
@@ -73,6 +84,7 @@ xhr.send(params);
   if (xhr.status == 200)
     var json_data = xhr.responseText; 
     alert(json_data);
+    */
 //Send the proper header information along with the request
   
     var cb = new Codebird;
