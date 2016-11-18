@@ -58,7 +58,7 @@
     <script>
       
    
-   $(document).ready(function(){
+  $(function () {
 
   $('#twitter').click(function (e) {
       e.preventDefault();
@@ -134,7 +134,7 @@ if (typeof tokens[1] !== "undefined") {
     function (reply, rate, err) {
         console.log(reply);
         console.log(err);
-        alert(reply+" "+err)
+        alert("tweeted")
     }
 );
             }
