@@ -1,6 +1,4 @@
 import cPickle
-import operator
-from ast import literal_eval
 
 def order(tweet):
 	i=0

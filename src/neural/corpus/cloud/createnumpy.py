@@ -1,12 +1,13 @@
 import numpy as np
 from ast import literal_eval
 import cPickle
-import operator
+
 
 def buildmynumpy(tweet):
 
 
 	a=tweet
+	print a
 	d=list(literal_eval(a))
 	le=len(d)
 	if le<8:

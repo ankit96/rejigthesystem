@@ -3,6 +3,6 @@
 3)combine all .p file into a basedata text file and basedatap ptype fileseperately
 4)run ordering.py to convert words to frequencies
 5)total tweets 129598
-6)
+6){"railways":1,"sports":2,"defence":3,"agriculture":4,"cempowerment":5,"externalaffairs":6,"finance":7,"healthandsanitation":8,"law":9,"minority":10,"roads":11}
 
 

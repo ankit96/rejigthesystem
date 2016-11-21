@@ -1,9 +1,8 @@
-from spellchecker import correct
 import HTMLParser
-from apos import apostrope
-import string
+
+
 import cPickle
-import re
+
 
 def strip_non_ascii(string):
     ''' Returns the string without non ASCII characters'''
