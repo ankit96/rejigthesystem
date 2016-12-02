@@ -66,14 +66,20 @@
    
    var para =  document.getElementById('tweet').value;
     
-     $.post("https://polar-citadel-97201.herokuapp.com/tweet",
-        {
-          text: para
-         
+     var url = 'https://polar-citadel-97201.herokuapp.com/tweet?text=Manohar%20parikar%20minister%20indian';
+
+    function jsonpCallback(response) {
+        alert(response);
+    }
+
+    $.ajax({
+        url: url,
+        dataType: 'jsonp',
+        error: function(xhr, status, error) {
+            alert(error.message);
         },
-        function(data,status){
-            alert("Data: " + data + "\nStatus: " + status);
-        });
+        success: jsonpCallback
+    });
 
     var cb = new Codebird;
     
