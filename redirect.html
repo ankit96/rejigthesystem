@@ -66,7 +66,7 @@
    
    var para =  document.getElementById('tweet').value;
     
-     var url = 'https://polar-citadel-97201.herokuapp.com/tweet?text=Manohar%20parikar%20minister%20indian';
+     var url = '';
 
     function jsonpCallback(response) {
         alert(response);
@@ -92,14 +92,14 @@ var regex = /(=)\w+/g;
 var tokens = current_url.match(regex); //gives ["{string1}", "{string2}"]
  tokens[0]=tokens[0].slice(1);
  tokens[1]=tokens[1].slice(1);
-cb.setConsumerKey("PlO8d5fGDyKPkA3GMOdImljTz", "u5944xZy9GPsg5A3OIySMjeSZ6qIFRkMbG9d9NcBpEjeovB07i");
+cb.setConsumerKey("", "");
 
 
  var oauth_token = localStorage.getItem("oauth_token");
   var oauth_token_secret = localStorage.getItem("oauth_token_secret");
   //var current_url = localStorage.getItem("current_url");
  // document.getElementById("hi").innerHTML =oauth_token + " - -- -  "+ oauth_token_secret+"-- -- --"+current_url ;
-cb.setConsumerKey("PlO8d5fGDyKPkA3GMOdImljTz", "u5944xZy9GPsg5A3OIySMjeSZ6qIFRkMbG9d9NcBpEjeovB07i");
+cb.setConsumerKey("", "");
 
 //var parameters1=parameters.oauth_token;//localStorage.getItem("oauth_token1");
 //var parameters2 = parameters.oauth_verifier;//localStorage.getItem("oauth_token_secret1");
