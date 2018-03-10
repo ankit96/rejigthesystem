@@ -12,10 +12,10 @@ from nltk.tag import pos_tag
 
 
 #consumer key, consumer secret, access token, access secret.
-ckey="I7CLI6FuaP5rbTMwVtPoykPfQ"
-csecret="5N50wezoVkIZTRXq2WSZFEF1Gm6cPHyOkjA9QxB4sBUASPXPZx"
-atoken="740092965926768640-oynCxQYi6liDJ9RlMc61qiEs8NtOl8N"
-asecret="ZeeVlbcfGqDZmzJigbIpTNGDYnionoHPhv32Gzw23NeU3"
+ckey=""
+csecret=""
+atoken=""
+asecret=""
 
 auth = OAuthHandler(ckey, csecret)
 auth.set_access_token(atoken, asecret)
