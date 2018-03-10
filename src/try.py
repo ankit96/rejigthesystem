@@ -8,10 +8,10 @@ from tweepy.streaming import StreamListener
 import tweepy
 
 #consumer key, consumer secret, access token, access secret.
-ckey="PlO8d5fGDyKPkA3GMOdImljTz"
-csecret="u5944xZy9GPsg5A3OIySMjeSZ6qIFRkMbG9d9NcBpEjeovB07i"
-atoken="1586345078-a1mPtaK8oL8VZRgN5mp0E1c9YxP2ro8mzg67yju"
-asecret="9U1DB5Ic12T2Qx4RkeWrdenPuqi6Fo3LmdIiw2e1ASfTh"
+ckey=""
+csecret=""
+atoken=""
+asecret=""
 
 class listener(StreamListener):
 
